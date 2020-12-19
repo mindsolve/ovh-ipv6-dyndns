@@ -11,7 +11,7 @@ import shutil
 
 from typing import Optional
 
-settings = {'tufin_addr': None}
+settings = {}
 prompts = {'ovh_application_key': "The OVH-API Application Key",
            'ovh_application_secret': "The OVH-API Application Secret",
            'ovh_consumer_key': "The OVH-API Consumer Key",
