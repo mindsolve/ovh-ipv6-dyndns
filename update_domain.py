@@ -36,8 +36,12 @@ def main():
 
         if record_type.casefold() == "A".casefold():
             ip_addr = requests.get("http://ipv4.icanhazip.com/").text
-        else:
+        elif record_type.casefold() == "AAAA".casefold():
             ip_addr = requests.get("http://ipv6.icanhazip.com/").text
+        else:
+            print(f"ERROR: Unknown record type \"{record_type}\"! Only 'A' (IPv4) and 'AAAA' (IPv6) are supported!")
+            print("-> Skipping record type")
+            continue
 
         record_id = ovh_api.ovhapi_get_recordid(client, zone_name, subdomain, record_type)
         if record_id == -1:
