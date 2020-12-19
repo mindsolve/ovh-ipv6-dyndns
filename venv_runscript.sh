@@ -15,4 +15,4 @@ else
   fi
 fi
 
-python3 "./update_domain.py"
+python3 "${DIR}/update_domain.py"
